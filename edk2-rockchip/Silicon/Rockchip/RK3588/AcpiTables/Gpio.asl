@@ -10,152 +10,22 @@
 //
 // Description: GPIO
 //
-Device (GPI0)
+Device (GPU1)
 {
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x0)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,gpio-bank" },
-    }
-  })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFD8A0000, 0x100)
-      Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) {309}
-    })
-    Return(RBUF)
-  }
+  Name (_HID, "RKCP5650") //TODO: Placeholder
+  Name (_CID, 0)
+  Name (_UID, 0)
+
   Method (_STA)
   {
-    Return(0xf)
+    Return (0xF)
   }
-}//GPIO0
 
-
-Device (GPI1)
-{
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x1)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,gpio-bank" },
-    }
+  Name (_CRS, ResourceTemplate () {
+    MEMORY32FIXED( ReadWrite, 0xfdd90000, 0x4200, ) // regs
+    MEMORY32FIXED( ReadWrite, 0xfdd95000, 0x1000, ) //gamma lut /
+    MEMORY32FIXED( ReadWrite, 0xfde80000, 0x2000, ) // hdmi 0/
+    MEMORY32FIXED( ReadWrite, 0xfdea0000, 0x2000, ) // hdmi 1/
+    MEMORY32FIXED( ReadWrite, 0xfdec0000, 0x1000, ) // eDP/
   })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFEC20000, 0x100)
-      Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) {310}
-    })
-    Return(RBUF)
-  }
-  Method (_STA)
-  {
-    Return(0xf)
-  }
-}//GPIO1
-
-Device (GPI2)
-{
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x2)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,gpio-bank" },
-    }
-  })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFEC30000, 0x100)
-      Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) {311}
-    })
-    Return(RBUF)
-  }
-  Method (_STA)
-  {
-    Return(0xf)
-  }
-}//GPIO2
-
-Device (GPI3)
-{
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x3)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,gpio-bank" },
-    }
-  })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFEC40000, 0x100)
-      Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) {312}
-    })
-    Return(RBUF)
-  }
-  Method (_STA)
-  {
-    Return(0xf)
-  }
-}//GPIO3
-
-Device (GPI4)
-{
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x4)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,gpio-bank" },
-    }
-  })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFEC50000, 0x100)
-      Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) {313}
-    })
-    Return(RBUF)
-  }
-  Method (_STA)
-  {
-    Return(0xf)
-  }
-}//GPIO4
-
-Device (PINC)
-{
-  Name (_HID, "PRP0001")
-  Name (_UID, 0x4)
-  Name (_DSD, Package () {
-    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-    Package () {
-        Package () { "compatible", "rockchip,rk3588-pinctrl" },
-    }
-  })
-  Method (_CRS, 0x0, NotSerialized)
-  {
-    Name (RBUF, ResourceTemplate()
-    {
-      Memory32Fixed(ReadWrite, 0xFD5F0000, 0x10000)
-    })
-    Return(RBUF)
-  }
-  Method (_STA)
-  {
-    Return(0xf)
-  }
 }
