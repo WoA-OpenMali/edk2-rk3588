@@ -28,6 +28,9 @@ DefinitionBlock ("Dsdt.aml", "DSDT", 2, "RKCP  ", "RK3588  ", 2)
     include ("Uart.asl")
     // include ("Spi.asl")
 
+    // include ("gpu.asl")
+    // include ("vop2.asl")
+
     include ("Usb1Host.asl")
     include ("Usb3Host0.asl")
     include ("Usb3Host1.asl")
