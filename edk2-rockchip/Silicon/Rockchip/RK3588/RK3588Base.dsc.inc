@@ -261,7 +261,7 @@
   gRK3588TokenSpaceGuid.PcdAcpiPcieEcamCompatModeDefault|$(ACPI_PCIE_ECAM_COMPAT_MODE_NXPMX6_SINGLE_DEV)
 
 [PcdsPatchableInModule]
-  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultBaudRate|1500000
+  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultBaudRate|115200
 
 [PcdsDynamicDefault.common]
   #
