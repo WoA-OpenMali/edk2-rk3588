@@ -266,6 +266,8 @@ RK3588InitPeripherals (
 
   Rk806Configure();
 
+  //Write 0x00010000 to 0xFD8D814C (PMU_PWR_GATE_SFTCON0)
+  MmioWrite32 (0xFD8D814C, 0x00010000);
   return EFI_SUCCESS;
 }
 

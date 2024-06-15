@@ -37,6 +37,7 @@ DefinitionBlock ("Dsdt.aml", "DSDT", 2, "RKCP  ", "RK3588  ", 2)
     include ("I2c.asl")
     include ("Uart.asl")
     // include ("Spi.asl")
+    include ("Gpu.asl")
 
     include ("I2s.asl")
 
